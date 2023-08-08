@@ -7,7 +7,7 @@ export default function TelaLogin({ navigation }) {
             <Text>TelaLogin</Text>
             <Button
                 title='Voltar'
-                onPress={() => navigation.navigate('Principal')}
+                onPress={() => navigation.navigate('BemVindo')}
             />
         </View>
     );
