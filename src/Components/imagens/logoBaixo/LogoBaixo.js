@@ -1,11 +1,11 @@
 import React from "react";
-import logo from '../../../../assets/logo.png';
+import logoBaixo from '../../../../assets/logoBaixo.png';
 import { Image, StyleSheet, View } from 'react-native';
 
 export default function Logo() {
     return (
         <View style={styles.centralizar}>
-            <Image style={styles.Logo} source={logo}></Image>
+            <Image style={styles.LogoBaixo} source={logoBaixo}></Image>
         </View>
     )
 }
@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    Logo: {
-        marginTop: 27,
-        width: '65%',
-        height: 150
+    LogoBaixo: {
+        marginTop: 270,
+        width: '25%',
+        height: 12.5
     }
 })
