@@ -10,9 +10,9 @@ const Stack = createStackNavigator();
 export default function AppMavigator() {
     return (
         <Stack.Navigator initialRouteName='Home'>
+            <Stack.Screen name="Login" component={TelaLogin} options={{ headerShown: false }} />
             <Stack.Screen name="BemVindo" component={TelaBemVindo} options={{ headerShown: false }} />
             <Stack.Screen name="Principal" component={TelaPrincipal} options={{ headerShown: false }} />
-            <Stack.Screen name="Login" component={TelaLogin} options={{ headerShown: false }} />
         </Stack.Navigator>
     );
 }
