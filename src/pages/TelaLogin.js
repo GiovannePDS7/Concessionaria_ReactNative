@@ -8,17 +8,18 @@ export default function TelaLogin({ navigation }) {
     return (
         <ScrollView style={styles.fundo}>
             <View>
+                <TouchableOpacity style={styles.botaoVoltar} onPress={() => navigation.goBack()}>
+                <Text style={styles.txtBtnVoltar}> ←Voltar</Text>
+                </TouchableOpacity>
                 <Logo />
                 <Text style={styles.Login}>Login</Text>
-                <View style={styles.linha}></View>
+                <View style={styles.linha}/>
                 <View style={styles.grandContainer}>
                     <View style={styles.containerInput}>
                         <View style={styles.ViewUsuario}>
                             <Text style={styles.labelInput}>Usuário</Text>
                             <TextInput
                                 placeholder='ex: SeuNomeDeUsuário'
-                                value={username}
-                                onChangeText={SetUsername}
                                 style={styles.input}
                             />
                         </View>
@@ -26,7 +27,6 @@ export default function TelaLogin({ navigation }) {
                             <Text style={styles.labelInput}>Email</Text>
                             <TextInput
                                 placeholder='ex: seuemail@email.com'
-                                value={username}
                                 style={styles.input}
                             />
                         </View>
@@ -39,17 +39,17 @@ export default function TelaLogin({ navigation }) {
                                 textContentType='password'
                             />
 
-                            <TouchableOpacity style={styles.botao2} onPress={() => navigation.navigate('Principal', { username })}>
-                                <Text style={styles.txtBtn2}>Esqueci minha senha!</Text>
+                            <TouchableOpacity style={styles.botao2} onPress={() => navigation.navigate('EsqueciSenha', { username })}>
+                                <Text style={styles.txtBtn2}>Esqueci minha senha</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.botoes}>
                             <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Principal', { username })}>
-                                <Text style={styles.txtBtn}>Entrar!</Text>
+                                <Text style={styles.txtBtn}>Entrar</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={[styles.botao3, styles.rightButton]} onPress={() => navigation.navigate('Principal', { username })}>
-                                <Text style={styles.txtBtn3}>Cadastrar-se!</Text>
+                            <TouchableOpacity style={[styles.botao3, styles.rightButton]} onPress={() => navigation.navigate('Cadastro', { username })}>
+                                <Text style={styles.txtBtn3}>Cadastrar-se</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -131,11 +131,12 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         letterSpacing: 1.5,
+
     },
     botao2: {
         marginTop: 5,
         borderBottomWidth: 0.8,
-        width: '43.2%'
+        width: '41.7%'
     },
     txtBtn2: {
         color: '#000',
@@ -144,8 +145,7 @@ const styles = StyleSheet.create({
         letterSpacing: 1.5,
     },
     botao3: {
-       
-        width: '28.2%',
+        width: '26.7%',
         alignItems: "center",
         justifyContent: "center",
         marginTop: '8%',
@@ -155,6 +155,20 @@ const styles = StyleSheet.create({
     },
     txtBtn3: {
         color: '#000',
+        fontWeight: 'bold',
+        letterSpacing: 1.5,
+    },
+    botaoVoltar: {
+        height: 20,
+        borderRadius: 10,
+        width: '20%',
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: '2%',
+    },
+    txtBtnVoltar: {
+        fontSize: 15,
+        color: '#4C0051',
         fontWeight: 'bold',
         letterSpacing: 1.5,
     },
