@@ -2,7 +2,9 @@ import * as React from 'react';
 import { TextInput, View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Logo from '../Components/imagens/logo/Logo.js';
 
-export default function TelaEsqueciSenha({ navigation }) {
+export default function TelaEsqueciSenha({ route, navigation }) {
+    const {emailRec} = route.params;
+
     const gerarNumeroAleatorio = () => {
         const randomNum = Math.random() * 99;
         if (randomNum.toFixed() < 10){
@@ -18,11 +20,11 @@ export default function TelaEsqueciSenha({ navigation }) {
                     <Text style={styles.txtBtnVoltar}> ←Voltar</Text>
                 </TouchableOpacity>
                 <Logo />
-                <Text style={styles.texto}>Verifique sua caixa de Email que foi cadastrada no {'\n'}<Text style={styles.bold}>MIDNIGHT CLUB</Text></Text>
+                <Text style={styles.texto}>Verifique seu email: {'\n'}{emailRec}</Text>
                 <View style={styles.numero}>
                     <Text style={styles.numeroAleatorio}>{gerarNumeroAleatorio()}</Text>
                 </View>
-                <Text style={styles.texto}>Selecione o código acima em sua caixa de email{'\n'} para redefinir sua senha</Text>
+                <Text style={styles.texto}>Selecione o código acima no email enviado{'\n'} para redefinir sua senha</Text>
                 <TouchableOpacity style={styles.botao2} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.txtBtn2}>Voltar ao Login</Text>
                 </TouchableOpacity>
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         lineHeight: 40,
-        marginTop: 70,
+        marginTop: 50,
     },
     bold: {
         fontWeight: 'bold',

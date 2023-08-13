@@ -39,7 +39,7 @@ export default function TelaLogin({ navigation }) {
                                 textContentType='password'
                             />
 
-                            <TouchableOpacity style={styles.botao2} onPress={() => navigation.navigate('EsqueciSenha', { username })}>
+                            <TouchableOpacity style={styles.botao2} onPress={() => navigation.navigate('Email', { username })}>
                                 <Text style={styles.txtBtn2}>Esqueci minha senha</Text>
                             </TouchableOpacity>
                         </View>
